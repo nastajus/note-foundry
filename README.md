@@ -1,3 +1,9 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/note-foundry-badge-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/brand/note-foundry-badge-light.png">
+  <img alt="Note Foundry: a violet notebook forged into linked structured data" src="docs/assets/brand/note-foundry-badge-light.png">
+</picture>
+
 # Note Foundry
 
 A local-first extraction, normalization, and inspection workbench for Microsoft OneNote.
