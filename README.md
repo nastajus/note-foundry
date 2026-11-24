@@ -14,24 +14,37 @@ Note Foundry uses delegated Microsoft Graph access to discover selected notebook
 > The public GitHub repository is currently a documentation-only project showcase. The implementation and real datasets remain local while their publication boundary is reviewed.
 
 > [!IMPORTANT]
-> This repository is built around a real personal OneNote archive. Some tracked datasets and generated reports contain private source material. This README stays at the category and system-design level, and its screenshots avoid raw note bodies, but that does **not** make the complete repository safe to publish. Review `docs/data/`, generated reports, media files, source URLs, identifiers, and Git history before making a remote public.
+> This repository is built around a real personal OneNote archive. Some tracked datasets and generated reports contain private source material. This README stays mostly at the category and system-design level; a few screenshots contain short, selectively reviewed examples to make the interface understandable. That does **not** make the complete repository safe to publish. Review `docs/data/`, generated reports, media files, source URLs, identifiers, and Git history before making a remote public.
 
-## Screenshots
+## Interface Tour
 
-### Project intent and development emphasis
+### Page-family workspaces
 
-![Project intent report showing the ETL workbench definition and development-emphasis charts](docs/assets/screenshots/project-intent-report.png)
+![Pulled Pages workspace offering selectable OneNote page families](docs/assets/screenshots/pulled-group-selector.png)
 
-### Color-grouped research library
+The main interface organizes selected OneNote material into page families rather than flattening an entire archive. Each family can retain its own navigation, source context, viewing modes, and linked reports while sharing the same extraction and dashboard foundation.
 
-![Research report index grouped into visually distinct analysis runs](docs/assets/screenshots/research-reports.png)
+### Structured source browsing
 
-### Debug and design report system
+![Calendar-shaped source page with a linked day-detail panel](docs/assets/screenshots/structured-calendar-detail.png)
 
-![Technical report index with status colors and incident-oriented design notes](docs/assets/screenshots/debug-design-reports.png)
+Source-shaped views preserve useful structures such as calendars and page hierarchies. A selected cell or page can open a focused detail panel and link back to the corresponding source replica, allowing quick scanning without discarding provenance.
 
-The screenshots intentionally show report organization and technical UI rather than detailed note content.
-They currently retain the earlier internal working label, **OneNote ETL**, while the application-wide visual rebrand is completed separately.
+### Specialized analytical modules
+
+![Longitudinal curve with medication-span overlays and interactive display controls](docs/assets/screenshots/specialized-pain-curve.png)
+
+Beyond the shared browser, Note Foundry supports purpose-built analytical modules for selected page families. This example converts recurring records into a longitudinal curve with intervention spans, compressed event markers, time-window controls, and source-page coverage statistics. These modules are configured research workflows, not assumptions imposed on every notebook.
+
+### Engineering and research memory
+
+| Research library | Debug and design reports |
+| --- | --- |
+| ![Research report index grouped into visually distinct analysis runs](docs/assets/screenshots/research-reports.png) | ![Technical report index with status colors and incident-oriented design notes](docs/assets/screenshots/debug-design-reports.png) |
+
+Report libraries keep interpretation, methods, incidents, and interface decisions linked to the source-facing application. Run colors make related research outputs easy to distinguish, while status-oriented technical reports retain implementation history and unresolved work.
+
+The screenshots were selected to show both reusable platform capabilities and narrowly configured analytical work without publishing full source pages. They currently retain the earlier internal working label, **OneNote ETL**, while the application-wide visual rebrand is completed separately.
 
 ## What It Does
 
@@ -83,6 +96,13 @@ The durable center of the project is a controlled evidence pipeline:
 - Grouping, nesting, density, edge, tint, and time-label controls.
 - Specialized visual layers for selected datasets, including span bars, severity overviews, and multi-epoch comparisons.
 - JSON/CSV exports designed so downstream dashboards do not need to reproduce parsing logic.
+
+### Specialized analytical modules
+
+- Purpose-built views layered on top of the shared extraction, provenance, and navigation system.
+- Domain-specific transformations such as longitudinal curves, intervention spans, calendar/detail workspaces, and hierarchy-preserving reading views.
+- Explicit scoping by page family so specialized interpretations do not silently become global data assumptions.
+- Reusable links back to source replicas and supporting reports for auditability.
 
 ### Report libraries
 
