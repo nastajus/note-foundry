@@ -8,7 +8,7 @@
 
 A local-first extraction, normalization, and inspection workbench for Microsoft OneNote.
 
-Note Foundry uses delegated Microsoft Graph access to discover selected notebook and page families, preserve their source structure, derive analysis-friendly datasets, and present the results in a static dashboard. The project combines ETL scripts, a facsimile/structured page viewer, interactive timelines, linked report libraries, and an installable mobile web-app shell.
+Note Foundry uses delegated Microsoft Graph access to discover and collect preconfigured notebook and page families, preserve their source structure, derive analysis-friendly datasets, and present the results in a static dashboard. The project combines ETL scripts, a facsimile/structured page viewer, interactive timelines, linked report libraries, and an installable mobile web-app shell.
 
 > [!NOTE]
 > The public GitHub repository is currently a documentation-only project showcase. The implementation and real datasets remain local while their publication boundary is reviewed.
@@ -23,6 +23,9 @@ Note Foundry uses delegated Microsoft Graph access to discover selected notebook
 ![Pulled Pages workspace offering selectable OneNote page families](docs/assets/screenshots/pulled-group-selector.png)
 
 The main interface organizes selected OneNote material into page families rather than flattening an entire archive. Each family can retain its own navigation, source context, viewing modes, and linked reports while sharing the same extraction and dashboard foundation.
+
+> [!NOTE]
+> These groups are currently defined before they reach the dashboard. The application can browse an existing pulled group, but it does not yet provide an end-user interface for browsing the complete OneNote hierarchy, selecting pages, previewing membership rules, or creating and refreshing a new group. Current pulls are deterministic Graph/Python workflows whose definitions were developed with substantial assisted analysis; there is no runtime AI dependency.
 
 ### Structured source browsing
 
@@ -103,6 +106,19 @@ The durable center of the project is a controlled evidence pipeline:
 - Domain-specific transformations such as longitudinal curves, intervention spans, calendar/detail workspaces, and hierarchy-preserving reading views.
 - Explicit scoping by page family so specialized interpretations do not silently become global data assumptions.
 - Reusable links back to source replicas and supporting reports for auditability.
+
+### Proposed collection builder
+
+The next major platform capability is a local collection-authoring workspace rather than another hard-coded page family:
+
+- Browse a searchable notebook, section-group, section, and page tree.
+- Stage explicit pages, branches, whole sections, date ranges, or pasted OneNote links.
+- Apply title/context filters, exclusions, bounded link expansion, ordering, and hierarchy rules.
+- Preview every proposed page with a human-readable inclusion reason before downloading content.
+- Save a declarative collection manifest and run it through a loopback-only Graph job service.
+- Review additions and removals before replacing an existing dataset.
+
+This is a proposed architecture, not a current feature. The existing static server is read-only, so safe collection authoring also requires a small local control service that keeps Graph credentials and filesystem writes out of the browser.
 
 ### Report libraries
 
