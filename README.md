@@ -39,13 +39,11 @@ Source-shaped views preserve useful structures such as calendars and page hierar
 
 Beyond the shared browser, Note Foundry supports purpose-built analytical modules for selected page families. This example converts recurring records into a longitudinal curve with intervention spans, compressed event markers, time-window controls, and source-page coverage statistics. These modules are configured research workflows, not assumptions imposed on every notebook.
 
-### Engineering and research memory
+### Research library
 
-| Research library | Debug and design reports |
-| --- | --- |
-| ![Research report index grouped into visually distinct analysis runs](docs/assets/screenshots/research-reports.png) | ![Technical report index with status colors and incident-oriented design notes](docs/assets/screenshots/debug-design-reports.png) |
+![Research report index grouped into visually distinct analysis runs](docs/assets/screenshots/research-reports.png)
 
-Report libraries keep interpretation, methods, incidents, and interface decisions linked to the source-facing application. Run colors make related research outputs easy to distinguish, while status-oriented technical reports retain implementation history and unresolved work.
+The research library keeps interpretation and methods linked to the source-facing application. Run colors make related analytical outputs easy to distinguish without mixing their conclusions into the source records.
 
 The screenshots were selected to show both reusable platform capabilities and narrowly configured analytical work without publishing full source pages. They currently retain the earlier internal working label, **OneNote ETL**, while the application-wide visual rebrand is completed separately.
 
@@ -125,7 +123,7 @@ This is a proposed architecture, not a current feature. The existing static serv
 - **Research reports:** evidence, methods, measurement design, and iterative analysis runs.
 - **Mind/subject reports:** cross-page synthesis over selected note families.
 - **Project reports:** architecture, project drift, repository state, and handoff/context practices.
-- **Debug + design reports:** incident histories, performance investigations, UI decisions, unresolved issues, and implementation status.
+- **Technical memory:** a searchable, topic-grouped library of incident histories, performance investigations, UI decisions, architecture notes, and unresolved issues. It supports maintenance and provenance rather than serving as a primary product showcase.
 - Bidirectional links between reports and the pulled source-page groups they discuss.
 
 ### Desktop and mobile operation
